@@ -49,7 +49,7 @@ if __name__ == "__main__":
                 timestamp = time.mktime(timeArray)
                 ac_time=China_stp-timestamp+28800
                 #默认时间频率为两小时，单位秒即7200，可以根据自己需求更改。
-                if ac_time<7200 :
+                if ac_time<1200 :
                     sent_message(token=token,secret=secret,text=date+"\n"+info,title=title,picUrl=img,messageUrl=url)
                     print("log:",date,title,info,"\n")
                 else:
@@ -63,7 +63,7 @@ if __name__ == "__main__":
                 video_list = get_video(i)
                 for j in video_list:
                     ac_time = China_stp- j['created'] 
-                    if ac_time<7200 :
+                    if ac_time<1200 :
                         import datetime
                         dateArray = datetime.datetime.fromtimestamp(j['created']+28800)
                         otherStyleTime = dateArray.strftime("%m-%d %H:%M:%S")
